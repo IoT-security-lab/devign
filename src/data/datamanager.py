@@ -1,10 +1,8 @@
 import glob
-
 import pandas as pd
 import numpy as np
 import os
 import src.utils.functions.parse as parse
-
 from os import listdir
 from os.path import isfile, join
 from src.utils.objects.input_dataset import InputDataset
@@ -38,8 +36,8 @@ def write(data_frame: pd.DataFrame, path, file_name):
     data_frame.to_pickle(path + file_name)
 
 
-def apply_filter(data_frame: pd.DataFrame, filter_func):
-    return filter_func(data_frame)
+def apply_filter(data_frame: pd.DataFrame, project, filter_func):
+    return filter_func(data_frame, project)
 
 
 def rename(data_frame: pd.DataFrame, old, new):
@@ -54,17 +52,23 @@ def tokenize(data_frame: pd.DataFrame):
     return data_frame[["tokens"]]
 
 
-def to_files(data_frame: pd.DataFrame, out_path):
-    # path = f"{self.out_path}/{self.dataset_name}/"
-    os.makedirs(out_path)
-
+def to_files(data_frame: pd.DataFrame, out_path, slice_log_name):
+    if not os.path.exists(out_path):
+        os.makedirs(out_path)
+    slice_log = open(out_path+slice_log_name+".txt", 'w')
     for idx, row in data_frame.iterrows():
         file_name = f"{idx}.c"
+        slice_log.write(file_name)
+        slice_log.write("\n")
         with open(out_path + file_name, 'w') as f:
             f.write(row.func)
+    slice_log.close()
 
 
 def create_with_index(data, columns):
+    """
+    Create a new indexed pd.DataFrame
+    """
     data_frame = pd.DataFrame(data, columns=columns)
     data_frame.index = list(data_frame["Index"])
 
@@ -117,7 +121,10 @@ def loads(data_sets_dir, ratio=1):
 
 
 def clean(data_frame: pd.DataFrame):
-    return data_frame.drop_duplicates(subset="func", keep=False)
+    df_notdupl = data_frame.drop_duplicates(subset="func", keep=False)
+    removed = len(data_frame) - len(df_notdupl)
+    print(f"---------Duplicates removed {removed} .")
+    return df_notdupl
 
 
 def drop(data_frame: pd.DataFrame, keys):

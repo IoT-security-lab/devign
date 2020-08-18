@@ -1,0 +1,10 @@
+-------------------------------- Tue 18 Aug 2020 03:18:57 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Tue 18 Aug 2020 03:19:13 PM CDT--------------------
+-------------------------------- Tue 18 Aug 2020 04:25:31 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Tue 18 Aug 2020 04:25:47 PM CDT--------------------

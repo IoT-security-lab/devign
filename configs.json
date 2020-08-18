@@ -16,17 +16,18 @@
     },
     "create" : {
         "filter_column_value": {"project" : "qemu"},
-        "slice_size": 100,
+        "slice_size": 500,
         "joern_cli_dir": "joern/joern-cli/"
     },
     "paths" : {
         "cpg" : "data/cpg/",
-        "joern" : "data/joern/",
+        "temp" : "data/temp/",
         "raw" : "data/raw/",
         "input" : "data/input/",
         "model" : "data/model/",
         "tokens" : "data/tokens/",
-        "w2v" : "data/w2v/"
+        "w2v" : "data/w2v/",
+        "bash": "src/joern_scripts/bash/"
     },
     "files" : {
         "raw" : "dataset.json",

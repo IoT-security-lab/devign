@@ -64,14 +64,18 @@ class Data(Config):
     def w2v(self):
         return self.get_property('w2v')
 
+    @property
+    def bash(self):
+        return self.get_property('bash')
+
 
 class Paths(Data):
     def __init__(self):
         super().__init__('paths')
 
     @property
-    def joern(self):
-        return self.get_property('joern')
+    def temp(self):
+        return self.get_property('temp')
 
 
 class Files(Data):

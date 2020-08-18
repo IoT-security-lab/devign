@@ -10,55 +10,69 @@
 
 import argparse
 import gc
+import os
 import shutil
 from argparse import ArgumentParser
-
 from gensim.models.word2vec import Word2Vec
-
 import configs
 import src.data as data
-import src.prepare as prepare
-import src.process as process
-import src.utils.functions.cpg as cpg
+import src.prepare as prepare  # need torch
+import src.process as process  # need torch
+import src.utils.functions.cpg as cpg  # need torch
 
 PATHS = configs.Paths()
 FILES = configs.Files()
 DEVICE = FILES.get_device()
 
 
-def select(dataset):
-    result = dataset.loc[dataset['project'] == "FFmpeg"]
-    len_filter = result.func.str.len() < 1200
-    result = result.loc[len_filter]
-    #print(len(result))
-    #result = result.iloc[11001:]
-    #print(len(result))
-    result = result.head(200)
-
+def select(dataset, project):
+    """
+    Filter the original dataset for faster processing time. Not needed in original Devign model.
+    """
+    result = dataset.loc[dataset['project'] == project]  # choosing only 'FFmpeg' project
+    # len_filter = result.func.str.len() < 1200   # filter to select functions with length less than 1200 chars
+    # result = result.loc[len_filter] # apply filter
+    # result = result.head(200)   # obtain only top 200 results 
     return result
 
 
 def create_task():
+    ffmpeg_proj = "FFmpeg"
+    qemu_proj = "qemu"
     context = configs.Create()
-    raw = data.read(PATHS.raw, FILES.raw)
-    filtered = data.apply_filter(raw, select)
-    filtered = data.clean(filtered)
-    data.drop(filtered, ["commit_id", "project"])
-    slices = data.slice_frame(filtered, context.slice_size)
-    slices = [(s, slice.apply(lambda x: x)) for s, slice in slices]
-
-    cpg_files = []
+    raw = data.read(PATHS.raw, FILES.raw)  # read original dataset published by the authors (qemu and ffmpeg)
+    ffmpeg_data = data.apply_filter(raw, ffmpeg_proj, select)  # run select function on whole dataset
+    ffmpeg_data = data.clean(ffmpeg_data)  # remove duplicates in the dataset after applying the filter
+    data.drop(ffmpeg_data, ["commit_id", "project"])  # ignored data for each function
+    slices = data.slice_frame(ffmpeg_data, context.slice_size)  # get # of `slice_size` functions at the time
+    slices = [(s, slice.apply(lambda x: x)) for s, slice in slices]  # not sure what this lambda function does
+    total_slices = len(slices)
+    cpg_files = []  # list for all cpg generated
     # Create CPG binary files
-    for s, slice in slices:
-        data.to_files(slice, PATHS.joern)
-        cpg_file = prepare.joern_parse(context.joern_cli_dir, PATHS.joern, PATHS.cpg, f"{s}_{FILES.cpg}")
-        cpg_files.append(cpg_file)
-        print(f"Dataset {s} to cpg.")
-        shutil.rmtree(PATHS.joern)
+    index = 0
+
+    # for s, slice in slices:
+    #     i = 0
+    #     # s = slices[i][0]
+    #     # slice = slices[i][1]
+    #     file_name = f"{ffmpeg_proj}_{i}-{total_slices}_{context.slice_size}each"
+    #     # print(file_name)
+    #     data.to_files(slice, PATHS.temp, file_name)  # write files selected to disk
+    #     cpg_file = prepare.joern_parse(context.joern_cli_dir, PATHS.temp, PATHS.cpg,
+    #                                    f"{s+1}outof{total_slices}_{context.slice_size}_{FILES.cpg}")  # generate cpg file calling joern-parse
+    #     cpg_files.append(cpg_file)  # add cpg file path
+    #     print(f"Dataset {s} to cpg.")
+    #     shutil.rmtree(PATHS.temp)  # delete files in disk
+    #     i += 1
+
     # Create CPG with graphs json files
-    json_files = prepare.joern_create(context.joern_cli_dir, PATHS.cpg, PATHS.cpg, cpg_files)
+    # json_files = prepare.joern_create(context.joern_cli_dir, PATHS.cpg, PATHS.cpg,
+    #                                   cpg_files)  # run joern script 'graph-for-funcs.sc'
+    cpg_files = os.listdir(PATHS.cpg)
+    print(cpg_files)
+    json_files = prepare.joern_create(PATHS.bash, cpg_files)
     for (s, slice), json_file in zip(slices, json_files):
-        graphs = prepare.json_process(PATHS.cpg, json_file)
+        graphs = prepare.json_process(PATHS.cpg, json_file)  # rename the function section and return a 'container'
         if graphs is None:
             print(f"Dataset chunk {s} not processed.")
             continue
@@ -90,8 +104,9 @@ def embed_task():
         cpg_dataset["nodes"] = cpg_dataset.apply(lambda row: cpg.parse_to_nodes(row.cpg, context.nodes_dim), axis=1)
         # remove rows with no nodes
         cpg_dataset = cpg_dataset.loc[cpg_dataset.nodes.map(len) > 0]
-        cpg_dataset["input"] = cpg_dataset.apply(lambda row: prepare.nodes_to_input(row.nodes, row.target, context.nodes_dim,
-                                                                                    w2vmodel.wv, context.edge_type), axis=1)
+        cpg_dataset["input"] = cpg_dataset.apply(
+            lambda row: prepare.nodes_to_input(row.nodes, row.target, context.nodes_dim,
+                                               w2vmodel.wv, context.edge_type), axis=1)
         data.drop(cpg_dataset, ["nodes"])
         print(f"Saving input dataset {file_name} with size {len(cpg_dataset)}.")
         data.write(cpg_dataset[["input", "target"]], PATHS.input, f"{file_name}_{FILES.input}")
@@ -150,7 +165,6 @@ def main():
         process_task(False)
     if args.process_stopping:
         process_task(True)
-
 
 
 if __name__ == "__main__":
