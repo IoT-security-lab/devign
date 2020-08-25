@@ -21,8 +21,10 @@
     },
     "paths" : {
         "cpg" : "data/cpg/",
+        "cpg_pickle": "data/cpg_pickle/",
         "temp" : "data/temp/",
         "raw" : "data/raw/",
+        "json" : "data/json/",
         "input" : "data/input/",
         "model" : "data/model/",
         "tokens" : "data/tokens/",

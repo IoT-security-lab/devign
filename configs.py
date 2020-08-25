@@ -44,6 +44,15 @@ class Data(Config):
     def cpg(self):
         return self.get_property('cpg')
 
+
+    @property
+    def cpg_pickle(self):
+        return self.get_property('cpg_pickle')
+
+    @property
+    def json(self):
+        return self.get_property('json')
+
     @property
     def raw(self):
         return self.get_property('raw')

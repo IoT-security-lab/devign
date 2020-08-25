@@ -17,3 +17,8 @@ executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/5.s
 /home/kb/hd/vulnerability-detection/devignscript finished successfully
 ()
 Finish successfully at Tue 18 Aug 2020 04:26:03 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 02:36:21 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/5.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 02:36:38 PM CDT--------------------

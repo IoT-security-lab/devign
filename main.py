@@ -72,14 +72,14 @@ def create_task():
     print(cpg_files)
     json_files = prepare.joern_create(PATHS.bash, cpg_files)
     for (s, slice), json_file in zip(slices, json_files):
-        graphs = prepare.json_process(PATHS.cpg, json_file)  # rename the function section and return a 'container'
+        graphs = prepare.json_process(PATHS.json, json_file)  # rename the function section and return a 'container'
         if graphs is None:
             print(f"Dataset chunk {s} not processed.")
             continue
         dataset = data.create_with_index(graphs, ["Index", "cpg"])
         dataset = data.inner_join_by_index(slice, dataset)
-        print(f"Writing cpg dataset chunk {s}.")
-        data.write(dataset, PATHS.cpg, f"{s}_{FILES.cpg}.pkl")
+        print(f"Writing cpg dataset chunk {s} to: {PATHS.cpg_pickle}.")
+        data.write(dataset, PATHS.cpg_pickle, f"{s}_{FILES.cpg}.pkl")
         del dataset
         gc.collect()
 
@@ -112,8 +112,10 @@ def embed_task():
         data.write(cpg_dataset[["input", "target"]], PATHS.input, f"{file_name}_{FILES.input}")
         del cpg_dataset
         gc.collect()
-    print("Saving w2vmodel.")
-    w2vmodel.save(f"{PATHS.w2v}/{FILES.w2v}")
+    model_file = f"{PATHS.w2v}{FILES.w2v}";
+    print(f"Saving w2vmodel to {model_file}")
+    w2vmodel.save(model_file)
+    return
 
 
 def process_task(stopping):

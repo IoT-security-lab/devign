@@ -24,7 +24,7 @@ def funcs_to_graphs(funcs_path):
 
 
 def graph_indexing(graph):
-    idx = int(graph["file"].split(".c")[0].split("/")[-1])
+    idx = int(graph["file"].split(".c")[0].split("/")[-1])  # remove path from graph
     del graph["file"]
     return idx, {"functions": [graph]}
 
@@ -120,13 +120,8 @@ def json_process(in_path, json_file):
             cpg_string = re.sub(r"io\.shiftleft\.codepropertygraph\.generated\.", '', cpg_string) # rename 'function' section in json pdg
             cpg_json = json.loads(cpg_string)
             container = []
-            print(cpg_json)
             for graph in cpg_json["functions"]:
-                if graph["file"] != "N/A":
-                    container.append(graph_indexing(graph))
-                else:
-                    print("---------------------Found a 'N/A' in " + str(graph))
-            # container = [graph_indexing(graph) for graph in cpg_json["functions"] if graph["file"] != "N/A"]
+                container.append(graph)
             return container
     return None
 

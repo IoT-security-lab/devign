@@ -8,3 +8,63 @@ executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.s
 /home/kb/hd/vulnerability-detection/devignscript finished successfully
 ()
 Finish successfully at Tue 18 Aug 2020 04:25:47 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 02:36:04 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 02:36:21 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 02:40:30 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 02:40:47 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 02:50:31 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 02:50:49 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 03:00:23 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 03:00:40 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 03:01:11 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 03:01:31 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 03:27:30 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 03:27:48 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 03:39:16 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 03:39:34 PM CDT--------------------
+-------------------------------- Wed 19 Aug 2020 08:38:36 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 19 Aug 2020 08:39:00 PM CDT--------------------
+-------------------------------- Mon 24 Aug 2020 02:30:26 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 24 Aug 2020 02:30:45 PM CDT--------------------
+-------------------------------- Mon 24 Aug 2020 02:41:18 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 24 Aug 2020 02:41:34 PM CDT--------------------
+-------------------------------- Mon 24 Aug 2020 03:13:27 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 24 Aug 2020 03:13:41 PM CDT--------------------
+-------------------------------- Mon 24 Aug 2020 03:15:43 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/3.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 24 Aug 2020 03:15:59 PM CDT--------------------
