@@ -55,7 +55,7 @@ def tokenize(data_frame: pd.DataFrame):
 def to_files(data_frame: pd.DataFrame, out_path, slice_log_name):
     if not os.path.exists(out_path):
         os.makedirs(out_path)
-    slice_log = open(out_path+slice_log_name+".txt", 'w')
+    slice_log = open(out_path + slice_log_name + ".txt", 'w')
     for idx, row in data_frame.iterrows():
         file_name = f"{idx}.c"
         slice_log.write(file_name)
@@ -69,9 +69,10 @@ def create_with_index(data, columns):
     """
     Create a new indexed pd.DataFrame
     """
-    data_frame = pd.DataFrame(data, columns=columns)
-    data_frame.index = list(data_frame["Index"])
-
+    to_df = {columns[0]: [x for x in range(1, len(data) + 1)],
+             columns[1]: data}
+    data_frame = pd.DataFrame(to_df)
+    data_frame.set_index("Index", inplace=True)
     return data_frame
 
 

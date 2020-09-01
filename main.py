@@ -41,16 +41,15 @@ def create_task():
     qemu_proj = "qemu"
     context = configs.Create()
     raw = data.read(PATHS.raw, FILES.raw)  # read original dataset published by the authors (qemu and ffmpeg)
-    ffmpeg_data = data.apply_filter(raw, ffmpeg_proj, select)  # run select function on whole dataset
+    ffmpeg_data = data.apply_filter(raw, ffmpeg_proj, select)  # retrieve only code with 'project' on whole dataset
     ffmpeg_data = data.clean(ffmpeg_data)  # remove duplicates in the dataset after applying the filter
     data.drop(ffmpeg_data, ["commit_id", "project"])  # ignored data for each function
-    slices = data.slice_frame(ffmpeg_data, context.slice_size)  # get # of `slice_size` functions at the time
-    slices = [(s, slice.apply(lambda x: x)) for s, slice in slices]  # not sure what this lambda function does
+    slices = data.slice_frame(ffmpeg_data, context.slice_size)  # get number of `slice_size` functions at the time
+    slices = [(s, slice.apply(lambda x: x)) for s, slice in slices]  # pack the slices in a tuple containing index and source code
+    # ----------Create CPG binary files----------
     total_slices = len(slices)
     cpg_files = []  # list for all cpg generated
-    # Create CPG binary files
     index = 0
-
     # for s, slice in slices:
     #     i = 0
     #     # s = slices[i][0]
@@ -59,29 +58,29 @@ def create_task():
     #     # print(file_name)
     #     data.to_files(slice, PATHS.temp, file_name)  # write files selected to disk
     #     cpg_file = prepare.joern_parse(context.joern_cli_dir, PATHS.temp, PATHS.cpg,
-    #                                    f"{s+1}outof{total_slices}_{context.slice_size}_{FILES.cpg}")  # generate cpg file calling joern-parse
+    #                f"{s+1}outof{total_slices}_{context.slice_size}_{FILES.cpg}")  # generate cpg file calling joern-parse
     #     cpg_files.append(cpg_file)  # add cpg file path
     #     print(f"Dataset {s} to cpg.")
     #     shutil.rmtree(PATHS.temp)  # delete files in disk
     #     i += 1
-
-    # Create CPG with graphs json files
-    # json_files = prepare.joern_create(context.joern_cli_dir, PATHS.cpg, PATHS.cpg,
-    #                                   cpg_files)  # run joern script 'graph-for-funcs.sc'
-    cpg_files = os.listdir(PATHS.cpg)
-    print(cpg_files)
+    # -----------------------------------------------------
+    cpg_files = os.listdir(PATHS.cpg)  # remove after testing
+    # ----------Create JSON with CPG files----------
     json_files = prepare.joern_create(PATHS.bash, cpg_files)
     for (s, slice), json_file in zip(slices, json_files):
         graphs = prepare.json_process(PATHS.json, json_file)  # rename the function section and return a 'container'
         if graphs is None:
             print(f"Dataset chunk {s} not processed.")
             continue
-        dataset = data.create_with_index(graphs, ["Index", "cpg"])
+        print(f"Found {len(graphs)} functions in {json_file}, slice has length {len(slice)}")
+        dataset = data.create_with_index(graphs, ["Index", "CPG"])
+        print(f"Dataset has length {len(dataset)}")
         dataset = data.inner_join_by_index(slice, dataset)
-        print(f"Writing cpg dataset chunk {s} to: {PATHS.cpg_pickle}.")
+        print(f"Writing cpg dataset chunk {s} to: {PATHS.cpg_pickle} with length {len(dataset)}.")
         data.write(dataset, PATHS.cpg_pickle, f"{s}_{FILES.cpg}.pkl")
         del dataset
         gc.collect()
+    # -----------------------------------------------------
 
 
 def embed_task():

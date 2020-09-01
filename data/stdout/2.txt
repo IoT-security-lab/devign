@@ -122,3 +122,267 @@ executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.s
 ()
 Finish successfully at Tue 25 Aug 2020 04:03:41 PM CDT--------------------
 Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:13:57 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:14:09 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:16:04 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:16:17 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:18:14 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:18:26 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:21:31 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:21:44 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:24:08 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:24:21 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:27:05 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:27:17 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:34:39 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:34:52 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:37:19 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:37:31 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:39:41 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:39:54 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 03:48:19 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 03:48:32 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 04:09:00 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 04:09:12 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 05:51:41 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 05:51:53 PM CDT--------------------
+Trash workspace.
+-------------------------------- Wed 26 Aug 2020 06:09:09 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Wed 26 Aug 2020 06:09:21 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 03:05:44 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 03:05:57 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 03:08:10 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 03:08:23 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 03:25:11 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 03:25:23 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 03:28:55 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 03:29:08 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 03:55:21 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 03:55:33 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 04:04:43 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 04:04:55 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 05:15:24 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 05:15:36 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:06:03 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:06:15 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:07:15 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:07:27 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:08:45 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:08:58 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:16:46 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:16:58 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:25:04 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:25:16 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 06:28:12 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 06:28:24 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 08:54:50 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 08:55:02 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 09:00:16 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 09:00:28 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 09:01:44 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 09:01:56 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 09:15:32 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 09:15:44 PM CDT--------------------
+Trash workspace.
+-------------------------------- Thu 27 Aug 2020 09:22:38 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Thu 27 Aug 2020 09:22:51 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:16:04 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:16:16 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:26:13 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:26:25 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:27:15 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:27:27 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:39:41 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:39:54 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:41:45 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:41:57 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:44:12 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:44:25 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:45:53 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:46:05 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:52:10 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:52:22 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 02:54:42 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 02:54:54 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 03:38:30 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 03:38:43 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 03:46:05 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 03:46:18 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 04:30:07 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 04:30:19 PM CDT--------------------
+Trash workspace.
+-------------------------------- Mon 31 Aug 2020 04:45:54 PM CDT
+executing /home/kb/hd/vulnerability-detection/devign/src/joern_scripts/scala/2.sc with params=Map()
+/home/kb/hd/vulnerability-detection/devignscript finished successfully
+()
+Finish successfully at Mon 31 Aug 2020 04:46:06 PM CDT--------------------
+Trash workspace.

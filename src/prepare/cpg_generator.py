@@ -57,7 +57,12 @@ def joern_create(bash_path, cpg_files, parallel=True, jobs=2):
                 print(f"[Error] path {bash_script} does not exists for cpg {this}. Exit.")
                 sys.exit(-1)
             print(f"Executing: {bash_script}.")
+            #   ------Redirect joern output to /dev/null
+            # null = open(os.devnull, 'w')
+            # stdout = sys.stdout
+            # sys.stdout = null
             process.append(subprocess.Popen(f"{bash_script} &", shell=True, stdout=subprocess.PIPE))
+            # sys.stdout = stdout
         exit_codes = [p.wait() for p in process]  # wait for all jobs to finish
         for p in process:
             output = p.stdout.readlines()[-1].decode()
@@ -123,6 +128,7 @@ def json_process(in_path, json_file):
             for graph in cpg_json["functions"]:
                 container.append(graph)
             return container
+    print(f"[Error] File provided does not exists: {in_path}{json_file}")
     return None
 
 '''
