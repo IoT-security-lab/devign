@@ -24,7 +24,9 @@ def get_ratio(dataset, ratio):
 
 
 def load(path, pickle_file, ratio=1):
-    dataset = pd.read_pickle(path + pickle_file)
+    absolute_path = path + pickle_file
+    print(absolute_path)
+    dataset = pd.read_pickle(absolute_path)
     dataset.info(memory_usage='deep')
     if ratio < 1:
         dataset = get_ratio(dataset, ratio)
@@ -69,8 +71,7 @@ def create_with_index(data, columns):
     """
     Create a new indexed pd.DataFrame
     """
-    to_df = {columns[0]: [x for x in range(1, len(data) + 1)],
-             columns[1]: data}
+    to_df = {columns[0]: [x for x in range(1, len(data) + 1)], columns[1]: data}
     data_frame = pd.DataFrame(to_df)
     data_frame.set_index("Index", inplace=True)
     return data_frame

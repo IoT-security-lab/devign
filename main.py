@@ -48,26 +48,38 @@ def create_task():
     slices = [(s, slice.apply(lambda x: x)) for s, slice in slices]  # pack the slices in a tuple containing index and source code
     # ----------Create CPG binary files----------
     total_slices = len(slices)
+    print(len(slices))
     cpg_files = []  # list for all cpg generated
-    index = 0
-    # for s, slice in slices:
-    #     i = 0
-    #     # s = slices[i][0]
-    #     # slice = slices[i][1]
-    #     file_name = f"{ffmpeg_proj}_{i}-{total_slices}_{context.slice_size}each"
-    #     # print(file_name)
-    #     data.to_files(slice, PATHS.temp, file_name)  # write files selected to disk
-    #     cpg_file = prepare.joern_parse(context.joern_cli_dir, PATHS.temp, PATHS.cpg,
-    #                f"{s+1}outof{total_slices}_{context.slice_size}_{FILES.cpg}")  # generate cpg file calling joern-parse
-    #     cpg_files.append(cpg_file)  # add cpg file path
-    #     print(f"Dataset {s} to cpg.")
-    #     shutil.rmtree(PATHS.temp)  # delete files in disk
-    #     i += 1
+    for s, slice in slices:
+        i = 0
+        file_name = f"{ffmpeg_proj}_{i}-{total_slices}_{context.slice_size}each"
+        data.to_files(slice, PATHS.temp, file_name)  # write files selected to disk
+        cpg_file = prepare.joern_parse(context.joern_cli_dir, PATHS.temp, PATHS.cpg, f"{s:02}")  # generate cpg file calling joern-parse
+        cpg_files.append(cpg_file)  # add cpg file path
+        print(f"Dataset {s} to cpg.")
+        shutil.rmtree(PATHS.temp)  # delete files in disk
+        i += 1
     # -----------------------------------------------------
-    cpg_files = os.listdir(PATHS.cpg)  # remove after testing
+    cpg_files = os.listdir(PATHS.cpg); print(len(cpg_files))  # remove after testing
+    # cpg_done = os.listdir(PATHS.json)
+    # if len(cpg_done) > 0:
+    #     print(f"Currently there are {len(cpg_done)} files in JSON directory.")
+    #     print("Do you want to start from the current checkpoint? (if not, I'll reprocess all the dataset)")
+    #     response = input("[y/n] - ")
+    #     if response == 'n':
+    #         print("Deleting current processed files.")
+    #         [os.remove(PATHS.json+f) for f in cpg_done]
+    #     elif response == 'y':
+    #         print("Processing only the missing ones.")
+    #         cpg_files = [c for c in cpg_files if c[:2] not in cpg_done]
+    #     else:
+    #         print("Invalid answer, exiting.")
+    #         exit()
     # ----------Create JSON with CPG files----------
-    json_files = prepare.joern_create(PATHS.bash, cpg_files)
+    # json_files = prepare.joern_create(PATHS.bash, cpg_files)
+    json_files = ['19.bin']
     for (s, slice), json_file in zip(slices, json_files):
+        print("Pickle")
         graphs = prepare.json_process(PATHS.json, json_file)  # rename the function section and return a 'container'
         if graphs is None:
             print(f"Dataset chunk {s} not processed.")
@@ -77,7 +89,7 @@ def create_task():
         print(f"Dataset has length {len(dataset)}")
         dataset = data.inner_join_by_index(slice, dataset)
         print(f"Writing cpg dataset chunk {s} to: {PATHS.cpg_pickle} with length {len(dataset)}.")
-        data.write(dataset, PATHS.cpg_pickle, f"{s}_{FILES.cpg}.pkl")
+        data.write(dataset, PATHS.cpg_pickle, f"{s:02}.pkl")
         del dataset
         gc.collect()
     # -----------------------------------------------------
@@ -86,12 +98,13 @@ def create_task():
 def embed_task():
     context = configs.Embed()
     # Tokenize source code into tokens
-    dataset_files = data.get_directory_files(PATHS.cpg)
+    # dataset_files = data.get_directory_files(PATHS.cpg)
+    dataset_files = os.listdir(PATHS.cpg)
     w2vmodel = Word2Vec(**context.w2v_args)
     w2v_init = True
     for pkl_file in dataset_files:
-        file_name = pkl_file.split(".")[0]
-        cpg_dataset = data.load(PATHS.cpg, pkl_file)
+        file_name = pkl_file.split(".")[0] + ".pkl"
+        cpg_dataset = data.load(PATHS.cpg_pickle, file_name)
         tokens_dataset = data.tokenize(cpg_dataset)
         data.write(tokens_dataset, PATHS.tokens, f"{file_name}_{FILES.tokens}")
         # word2vec used to learn the initial embedding of each token
@@ -111,7 +124,7 @@ def embed_task():
         data.write(cpg_dataset[["input", "target"]], PATHS.input, f"{file_name}_{FILES.input}")
         del cpg_dataset
         gc.collect()
-    model_file = f"{PATHS.w2v}{FILES.w2v}";
+    model_file = f"{PATHS.w2v}{FILES.w2v}"
     print(f"Saving w2vmodel to {model_file}")
     w2vmodel.save(model_file)
     return
